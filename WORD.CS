@@ -12,3 +12,19 @@
                     outputStr = AddLine(outputStr, inputStr[i]); //Добавляем строку в вычислемый массив
             }
             Console.WriteLine("Полученный массив:");
+            //Перебираем элементы вычисляемого массива
+            for (int i = 0; i < outputStr.Length; i++)
+                Console.WriteLine(outputStr[i]); //выводим рассматриваемую строку вычисляемого массива
+        
+
+     static string[] AddLine(string[] data, string line)
+        {
+            int originalLength = data.Length; //Узнаем размерность полученного массива 
+            string[] newData = new string[originalLength + 1]; //Создаем новый массив размерностью на 1 единицу больше полученного
+            //Перебираем элементы полученного массива
+            for (int i = 0; i < originalLength; i++)
+                newData[i] = data[i]; //переносим элементы полученного массива в новый, только что созданный
+            newData[originalLength] = line; //Заносим в последнюю строку нового иассива переменную line
+            return newData; //Возвращаем новый массив
+        }
+
